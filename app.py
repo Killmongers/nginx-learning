@@ -1,9 +1,12 @@
 from fastapi import FastAPI 
+import os
+from dotenv import load_dotenv
 
-
+load_dotenv()
 app= FastAPI()
 
-@app.get("/message")
+app_name=os.getenv("APP_NAME")
+@app.get("/")
 def index():
-    return{"message":"welcome to my world of Devops"}
+    return{"message":f"welcome to my world of Devops from {app_name}"}
 

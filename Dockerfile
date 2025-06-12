@@ -5,7 +5,7 @@ WORKDIR /app
 copy app.py .
 copy requirements.txt .
 
-RUN apt-get update && apt-get install 
+Run apt-get update && apt-get install 
 
 RUN pip install --no-cache-dir -r requirements.txt
 
