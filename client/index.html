@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Load Balancer Demo</title>
+</head>
+<body>
+  <h1>NGINX Load Balancer Demo</h1>
+  <button onclick="fetchMessage()">Get Response</button>
+  <h1 id="output"> Loading ....</h1>
+
+  <script>
+    async function fetchMessage() {
+      const res = await fetch('/api/');
+      const data = await res.json();
+      document.getElementById('output').innerText = data.message;
+    }
+  </script>
+</body>
+</html>
+

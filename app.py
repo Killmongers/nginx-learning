@@ -6,7 +6,8 @@ load_dotenv()
 app= FastAPI()
 
 app_name=os.getenv("APP_NAME")
-@app.get("/")
+@app.get("/api/")
 def index():
-    return{"message":f"welcome to my world of Devops from {app_name}"}
+    return {"message": f"This response is being served by: {app_name} behind Nginx load balancer"}
+
 
